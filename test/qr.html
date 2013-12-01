@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mod_qrg</title>
+	<script type="text/javascript">
+		function encode() {
+			var txt = document.getElementById("txt");
+			var lvl = document.getElementById("lvl");
+			var cas = document.getElementById("case");
+			var emb = document.getElementById("qrcode");
+			emb.src = "/qrg/qrg?text=" + encodeURIComponent(txt.value) +
+					"&level=" + lvl.value + "&case=" + (cas.checked ? "1" : "0");
+		}
+	</script>
+</head>
+<body>
+<div id="frm" style="width: 250px; margin: 0 auto; text-align: center;">
+	<label for="txt">Text</label>
+	<input id="txt" type="text" placeholder="Text to encode"/><br/>
+	<label for="lvl">EC Level</label>
+	<select id="lvl">
+		<option value="L">L</option>
+		<option value="M">M</option>
+		<option value="Q">Q</option>
+		<option value="H">H</option>
+	</select><br/>
+	<label for="case">Case sensitive</label>
+	<input id="case" type="checkbox" checked/><br/>
+	<button id="encode" onclick="encode();">Encode</button><br/>
+	<img id="qrcode" src="" type="image/svg+xml"
+			style="width: 150px; height: 150px; border: 1px solid black; padding: 10px;"/>
+</div>
+</body>
+</html>
+

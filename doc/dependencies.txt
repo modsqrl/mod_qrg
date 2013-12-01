@@ -1,0 +1,11 @@
+
+qrencode-3.4.3
+./configure --prefix=/usr/local --enable-thread-safety --disable-sdltest --disable-rpath CFLAGS="-O2 -mtune=native"
+make
+sudo make install
+
+libapreq
+./configure --with-apache2-apxs=/usr/local/apache24/bin/apxs CFLAGS="-O2 -mtune=native"
+make
+sudo make install
+
