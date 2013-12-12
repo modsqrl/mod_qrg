@@ -8,7 +8,7 @@
 			var lvl = document.getElementById("lvl");
 			var cas = document.getElementById("case");
 			var emb = document.getElementById("qrcode");
-			emb.src = "/qrg/qrg?text=" + encodeURIComponent(txt.value) +
+			emb.src = "/qrg/qr.svg?text=" + encodeURIComponent(txt.value) +
 					"&level=" + lvl.value + "&case=" + (cas.checked ? "1" : "0");
 		}
 	</script>
