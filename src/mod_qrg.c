@@ -124,17 +124,12 @@ static char *qrcode_to_svg(apr_pool_t * p, QRcode *code)
     size_t width_len, dot_len = 10U;
 
     /* How many characters are needed to display the width */
-    /* QR Codes have a maximum width of 177 at this time */
-    if (code->width > 9) {
-        if (code->width > 99) {
-            width_len = 3;
-        }
-        else {
-            width_len = 2;
-        }
+    /* QR Code widths are currently 21 <= width <= 177 */
+    if (code->width > 99) {
+        width_len = 3;
     }
     else {
-        width_len = 1;
+        width_len = 2;
     }
 
     /* Allocate the svg buffer */
