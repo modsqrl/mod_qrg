@@ -19,6 +19,10 @@ all: local-shared-build
 install: install-modules-yes
 	rsync -r ../test/conf ../test/htdocs $(top_builddir)
 
+#   format the code according to apache's style guide
+format:
+	indent -i4 -npsl -di0 -br -nce -d0 -cli0 -npcs -nfc1 -nut *.[ch]
+
 #   cleanup
 clean:
 	-rm -f mod_qrg.o mod_qrg.lo mod_qrg.slo mod_qrg.la 
